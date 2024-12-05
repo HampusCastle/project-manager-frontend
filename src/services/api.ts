@@ -1,12 +1,14 @@
 import axios from 'axios';
 
+
 const api = axios.create({
-  baseURL: 'http://localhost:8080', // Your backend URL
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8080', 
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
+// Interceptor för att lägga till JWT-token i varje begäran
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -20,7 +22,7 @@ api.interceptors.request.use((config) => {
 // Auth API
 export const login = async (username: string, password: string): Promise<any> => {
   const response = await api.post('/users/login', { username, password });
-  return response.data;  
+  return response.data;
 };
 
 export const registerUser = async (username: string, password: string, email: string) => {
