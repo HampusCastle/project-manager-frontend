@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAllUsers, deleteUser } from '../services/api';
-import { toastSuccess, toastError } from '../services/toastConfig';
+import { toastSuccess, toastError } from '../services/toastConfig'
 
 const UserList = () => {
   const [users, setUsers] = useState<any[]>([]);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../services/api';
-import { toastSuccess, toastError } from '../services/toastConfig';
+import { toastSuccess, toastError } from '../services/toastConfig'
 
 const Login = () => {
   const [username, setUsername] = useState('');

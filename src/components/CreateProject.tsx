@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createProject } from '../services/api';
 import { useNavigate } from 'react-router-dom';
-import { toastSuccess, toastError } from '../services/toastConfig';
+import { toastSuccess, toastError } from '../services/toastConfig'
 
 const CreateProject = () => {
     const [name, setName] = useState('');

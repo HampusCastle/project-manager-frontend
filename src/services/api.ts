@@ -7,7 +7,6 @@ const api = axios.create({
   },
 });
 
-// Set up the token for authorization in request headers
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -21,7 +20,7 @@ api.interceptors.request.use((config) => {
 // Auth API
 export const login = async (username: string, password: string): Promise<any> => {
   const response = await api.post('/users/login', { username, password });
-  return response.data;  // This should return both token and role
+  return response.data;  
 };
 
 export const registerUser = async (username: string, password: string, email: string) => {
